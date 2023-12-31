@@ -265,7 +265,6 @@ def get(client, connection_sql):
                             print(f"{pseudo[client]} has disconnected")
                             with lock:
                                 clients.remove(client)
-                                connected_pseudo.pop(pseudo[client])
                                 del pseudo[client]
                             client.send(":okbye".encode())
                             client.close()
